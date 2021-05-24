@@ -2,6 +2,10 @@ import '../styles.css';
 
 const refs = {
     timer: document.querySelector('#timer-1'),
+    clockDays: document.querySelector('[data-value="days"]'),
+  clockHours: document.querySelector('[data-value="hours"]'),
+  clockMins: document.querySelector('[data-value="mins"]'),
+  clockSecs: document.querySelector('[data-value="secs"]')
 };
 
 const timer = {
@@ -25,10 +29,6 @@ const timer = {
 // // });
     
 timer.finish();
-
-function updateClockface({ days, hours, mins, secs }) {
-    refs.timer.textContent = `${days}:${hours}:${mins}:${secs}`;
-}
 
 // выводит значения таймера в двузначном виде
 function pad(value) {
@@ -65,5 +65,9 @@ const secs = pad(Math.floor((time % (1000 * 60)) / 1000));
 }
 
 function updateClockface({ days, hours, mins, secs }) {
-    refs.timer.textContent = `${days}:${hours}:${mins}:${secs}`;
+     refs.clockDays.textContent = `${days}`;
+  refs.clockHours.textContent = `${hours}`;
+  refs.clockMins.textContent = `${mins}`;
+  refs.clockSecs.textContent = `${secs}`;
+    // refs.timer.textContent = `${days}:${hours}:${mins}:${secs}`;
 }

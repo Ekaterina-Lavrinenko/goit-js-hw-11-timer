@@ -2,10 +2,10 @@ import '../styles.css';
 
 const refs = {
     // timer: document.querySelector('#timer-1'),
-    clockDays: document.querySelector('[data-value="days"]'),
-  clockHours: document.querySelector('[data-value="hours"]'),
-  clockMins: document.querySelector('[data-value="mins"]'),
-  clockSecs: document.querySelector('[data-value="secs"]')
+  timeDays: document.querySelector('[data-value="days"]'),
+  timeHours: document.querySelector('[data-value="hours"]'),
+  timeMins: document.querySelector('[data-value="mins"]'),
+  timeSecs: document.querySelector('[data-value="secs"]'),
 };
 
 class CountdownTimer {
@@ -67,13 +67,13 @@ pad(value) {
 const Timer = new CountdownTimer({
     selector: '#timer-1',
     targetDate: new Date('Jul 17, 2025'),
-    onCheck: updateClockface,
+    onCheck: updateTimeface,
 });
 
-function updateClockface({ days, hours, mins, secs }) {
-     refs.clockDays.textContent = `${days}`;
-  refs.clockHours.textContent = `${hours}`;
-  refs.clockMins.textContent = `${mins}`;
-  refs.clockSecs.textContent = `${secs}`;
+function updateTimeface({ days, hours, mins, secs }) {
+     refs.timeDays.textContent = `${days}`;
+     refs.timeHours.textContent = `${hours}`;
+     refs.timeMins.textContent = `${mins}`;
+     refs.timeSecs.textContent = `${secs}`;
     // refs.timer.textContent = `${days}:${hours}:${mins}:${secs}`;
 }
